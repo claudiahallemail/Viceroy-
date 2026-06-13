@@ -19,7 +19,7 @@ const residenceTypes = [
     sqft: '2,400 – 3,100',
     price: 'From $2.995M',
     image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80',
-    features: ['Panoramic Gulf Views', 'Chef\'s Kitchen', 'Master Suite', 'Wraparound Terrace'],
+    features: ['Panoramic Gulf Views', "Chef's Kitchen", 'Master Suite', 'Wraparound Terrace'],
   },
   {
     type: '4 Bedroom',
