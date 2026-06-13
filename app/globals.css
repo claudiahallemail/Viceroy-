@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0A1628;
+  --gold: #C9A96E;
+  --cream: #F8F5F0;
+  --charcoal: #2C2C2C;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--charcoal);
+}
+
+@layer components {
+  .btn-gold {
+    @apply bg-gold text-navy px-8 py-4 text-xs tracking-luxury font-sans font-semibold uppercase transition-all duration-300 hover:bg-gold-light hover:shadow-lg;
+  }
+
+  .btn-outline-gold {
+    @apply border border-gold text-gold px-8 py-4 text-xs tracking-luxury font-sans font-semibold uppercase transition-all duration-300 hover:bg-gold hover:text-navy;
+  }
+
+  .section-label {
+    @apply text-gold text-xs tracking-luxury uppercase font-sans font-medium mb-4;
+  }
+
+  .section-heading {
+    @apply font-serif text-4xl md:text-5xl lg:text-6xl leading-tight;
+  }
+
+  .gold-divider {
+    @apply w-16 h-px bg-gold my-6;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  }
+}
