@@ -3,169 +3,216 @@
 import { useState } from 'react'
 
 export default function Contact() {
-  const [form, setForm] = useState({
+  const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     phone: '',
-    interest: '',
+    residence: '',
     message: '',
+    agreeToContact: false,
   })
   const [submitted, setSubmitted] = useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
-  }
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    // In production, this would send to a backend
     setSubmitted(true)
   }
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value,
+    }))
+  }
+
   return (
-    <section id="contact" className="bg-cream py-24 md:py-32">
+    <section id="contact" className="bg-navy py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Left: broker info */}
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left: Info */}
           <div>
-            <p className="section-label">Exclusive Sales</p>
-            <h2 className="section-heading">
-              Begin Your<br />
-              <span className="italic font-light">Journey</span>
+            <p className="section-label">Connect With Us</p>
+            <h2 className="font-serif text-4xl md:text-5xl text-cream font-light mb-6">
+              Begin Your
+              <br />
+              <span className="italic text-gold">Journey Home</span>
             </h2>
             <div className="gold-divider" />
-            <p className="font-sans text-charcoal/60 text-sm leading-relaxed mt-4 mb-10">
-              Our sales team is ready to guide you through the collection. Register your interest
-              to receive priority access to floor plans, pricing, and exclusive preview opportunities.
+            <p className="text-cream/70 font-sans text-sm leading-relaxed mt-6 mb-10">
+              Register your interest today to receive exclusive pre-launch pricing, floor plans,
+              and private previews of Viceroy Residences Clearwater Beach.
             </p>
 
-            <div className="border-t border-charcoal/10 pt-8">
-              <p className="font-sans text-[10px] tracking-widest uppercase text-gold mb-4">Exclusive Listing Broker</p>
-              <p className="font-serif text-2xl text-navy mb-1">Claudia Hall</p>
-              <p className="font-sans text-xs text-charcoal/60 mb-6">HomeScene Property Partners International LLC</p>
-
+            {/* Broker Info */}
+            <div className="border border-gold/20 p-8 mb-8">
+              <p className="text-gold text-xs tracking-luxury uppercase font-sans mb-4">Exclusive Sales Representation</p>
+              <h3 className="font-serif text-2xl text-cream font-light mb-1">Claudia Hall</h3>
+              <p className="text-cream/60 text-xs font-sans tracking-wide mb-6">
+                HomeScene Property Partners International LLC
+              </p>
               <div className="space-y-3">
                 <a
                   href="tel:8134970060"
-                  className="flex items-center gap-3 font-sans text-sm text-charcoal hover:text-gold transition-colors"
+                  className="flex items-center gap-3 text-cream/80 hover:text-gold transition-colors duration-300 text-sm font-sans"
                 >
-                  <span className="w-8 h-8 bg-gold/10 flex items-center justify-center text-gold text-xs">☎</span>
+                  <span className="text-gold">📞</span>
                   (813) 497-0060
                 </a>
                 <a
                   href="mailto:claudia@luxuryfloridaresidence.com"
-                  className="flex items-center gap-3 font-sans text-sm text-charcoal hover:text-gold transition-colors"
+                  className="flex items-center gap-3 text-cream/80 hover:text-gold transition-colors duration-300 text-sm font-sans"
                 >
-                  <span className="w-8 h-8 bg-gold/10 flex items-center justify-center text-gold text-xs">✉</span>
+                  <span className="text-gold">✉️</span>
                   claudia@luxuryfloridaresidence.com
                 </a>
-                <div className="flex items-start gap-3 font-sans text-sm text-charcoal">
-                  <span className="w-8 h-8 bg-gold/10 flex items-center justify-center text-gold text-xs flex-shrink-0">⊙</span>
-                  <span>600 Cleveland St, Suite 312<br />Clearwater, FL 33755</span>
+                <div className="flex items-start gap-3 text-cream/80 text-sm font-sans">
+                  <span className="text-gold mt-0.5">📍</span>
+                  <span>600 Cleveland St Suite 312<br />Clearwater FL 33755</span>
                 </div>
               </div>
             </div>
+
+            {/* License */}
+            <p className="text-cream/40 text-xs font-sans">
+              License: CQ1060555 | HomeScene Property Partners International LLC
+            </p>
           </div>
 
-          {/* Right: form */}
-          <div className="bg-white p-8 md:p-12">
+          {/* Right: Form */}
+          <div className="bg-cream p-8 md:p-10">
             {submitted ? (
-              <div className="text-center py-16">
-                <div className="gold-divider mx-auto mb-6" />
-                <h3 className="font-serif text-3xl text-navy mb-3">Thank You</h3>
-                <p className="font-sans text-charcoal/60 text-sm">
-                  Your inquiry has been received. A member of our sales team will be in touch shortly.
+              <div className="text-center py-12">
+                <div className="w-16 h-16 border border-gold flex items-center justify-center mx-auto mb-6">
+                  <span className="text-gold text-2xl">✓</span>
+                </div>
+                <h3 className="font-serif text-3xl text-navy mb-4">Thank You</h3>
+                <p className="text-charcoal/70 font-sans text-sm leading-relaxed">
+                  Your inquiry has been received. Claudia Hall will be in touch within 24 hours
+                  with exclusive information about Viceroy Residences Clearwater Beach.
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <p className="section-label text-navy">Register Your Interest</p>
+                  <h3 className="font-serif text-2xl text-navy font-light">Request Information</h3>
+                </div>
+
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-sans text-[10px] tracking-widest uppercase text-charcoal/50 mb-2">
+                    <label className="block text-charcoal/60 text-xs uppercase tracking-wide font-sans mb-2">
                       First Name *
                     </label>
                     <input
+                      type="text"
                       name="firstName"
                       required
-                      value={form.firstName}
+                      value={formData.firstName}
                       onChange={handleChange}
-                      className="w-full border border-charcoal/20 px-4 py-3 font-sans text-sm text-charcoal focus:outline-none focus:border-gold"
+                      className="w-full border border-gold/30 bg-white px-4 py-3 text-charcoal font-sans text-sm focus:outline-none focus:border-gold transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block font-sans text-[10px] tracking-widest uppercase text-charcoal/50 mb-2">
+                    <label className="block text-charcoal/60 text-xs uppercase tracking-wide font-sans mb-2">
                       Last Name *
                     </label>
                     <input
+                      type="text"
                       name="lastName"
                       required
-                      value={form.lastName}
+                      value={formData.lastName}
                       onChange={handleChange}
-                      className="w-full border border-charcoal/20 px-4 py-3 font-sans text-sm text-charcoal focus:outline-none focus:border-gold"
+                      className="w-full border border-gold/30 bg-white px-4 py-3 text-charcoal font-sans text-sm focus:outline-none focus:border-gold transition-colors"
                     />
                   </div>
                 </div>
+
                 <div>
-                  <label className="block font-sans text-[10px] tracking-widest uppercase text-charcoal/50 mb-2">
-                    Email *
+                  <label className="block text-charcoal/60 text-xs uppercase tracking-wide font-sans mb-2">
+                    Email Address *
                   </label>
                   <input
-                    name="email"
                     type="email"
+                    name="email"
                     required
-                    value={form.email}
+                    value={formData.email}
                     onChange={handleChange}
-                    className="w-full border border-charcoal/20 px-4 py-3 font-sans text-sm text-charcoal focus:outline-none focus:border-gold"
+                    className="w-full border border-gold/30 bg-white px-4 py-3 text-charcoal font-sans text-sm focus:outline-none focus:border-gold transition-colors"
                   />
                 </div>
+
                 <div>
-                  <label className="block font-sans text-[10px] tracking-widest uppercase text-charcoal/50 mb-2">
-                    Phone
+                  <label className="block text-charcoal/60 text-xs uppercase tracking-wide font-sans mb-2">
+                    Phone Number
                   </label>
                   <input
-                    name="phone"
                     type="tel"
-                    value={form.phone}
+                    name="phone"
+                    value={formData.phone}
                     onChange={handleChange}
-                    className="w-full border border-charcoal/20 px-4 py-3 font-sans text-sm text-charcoal focus:outline-none focus:border-gold"
+                    className="w-full border border-gold/30 bg-white px-4 py-3 text-charcoal font-sans text-sm focus:outline-none focus:border-gold transition-colors"
                   />
                 </div>
+
                 <div>
-                  <label className="block font-sans text-[10px] tracking-widest uppercase text-charcoal/50 mb-2">
-                    Residence Interest
+                  <label className="block text-charcoal/60 text-xs uppercase tracking-wide font-sans mb-2">
+                    Residence of Interest
                   </label>
                   <select
-                    name="interest"
-                    value={form.interest}
+                    name="residence"
+                    value={formData.residence}
                     onChange={handleChange}
-                    className="w-full border border-charcoal/20 px-4 py-3 font-sans text-sm text-charcoal focus:outline-none focus:border-gold bg-white"
+                    className="w-full border border-gold/30 bg-white px-4 py-3 text-charcoal font-sans text-sm focus:outline-none focus:border-gold transition-colors"
                   >
-                    <option value="">Select a residence type</option>
-                    <option>Two Bedroom — From $1,995,000</option>
-                    <option>Three Bedroom — From $2,850,000</option>
-                    <option>Four Bedroom — From $4,200,000</option>
-                    <option>Five Bedroom — From $5,800,000</option>
-                    <option>Penthouse — From $9,500,000</option>
+                    <option value="">Select a Residence Type</option>
+                    <option value="2br">2 Bedroom – From $1.995M</option>
+                    <option value="3br">3 Bedroom – From $2.995M</option>
+                    <option value="4br">4 Bedroom – From $4.5M</option>
+                    <option value="5br">5 Bedroom – From $7.5M</option>
+                    <option value="penthouse">Penthouse – From $12M</option>
                   </select>
                 </div>
+
                 <div>
-                  <label className="block font-sans text-[10px] tracking-widest uppercase text-charcoal/50 mb-2">
+                  <label className="block text-charcoal/60 text-xs uppercase tracking-wide font-sans mb-2">
                     Message
                   </label>
                   <textarea
                     name="message"
                     rows={4}
-                    value={form.message}
+                    value={formData.message}
                     onChange={handleChange}
-                    className="w-full border border-charcoal/20 px-4 py-3 font-sans text-sm text-charcoal focus:outline-none focus:border-gold resize-none"
+                    placeholder="Tell us about your vision for coastal luxury living..."
+                    className="w-full border border-gold/30 bg-white px-4 py-3 text-charcoal font-sans text-sm focus:outline-none focus:border-gold transition-colors resize-none"
                   />
                 </div>
-                <button type="submit" className="btn-primary w-full text-center">
-                  Register Interest
+
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    name="agreeToContact"
+                    id="agreeToContact"
+                    checked={formData.agreeToContact}
+                    onChange={handleChange}
+                    className="mt-1 accent-gold"
+                    required
+                  />
+                  <label htmlFor="agreeToContact" className="text-charcoal/60 text-xs font-sans leading-relaxed">
+                    I consent to being contacted by Claudia Hall / HomeScene Property Partners International LLC
+                    regarding Viceroy Residences Clearwater Beach. *
+                  </label>
+                </div>
+
+                <button type="submit" className="w-full btn-gold text-center">
+                  Submit Inquiry
                 </button>
-                <p className="font-sans text-[10px] text-charcoal/40 leading-relaxed">
-                  By submitting this form you agree to be contacted by HomeScene Property Partners
-                  International LLC regarding Viceroy Residences Clearwater Beach.
+
+                <p className="text-charcoal/40 text-xs font-sans text-center leading-relaxed">
+                  By submitting, you agree to receive communications from our sales team.
+                  This does not constitute an offer to sell. Prices subject to change.
                 </p>
               </form>
             )}

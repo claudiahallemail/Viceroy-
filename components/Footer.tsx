@@ -1,4 +1,4 @@
-const footerLinks = [
+const navLinks = [
   { label: 'Overview', href: '#overview' },
   { label: 'Residences', href: '#residences' },
   { label: 'Amenities', href: '#amenities' },
@@ -9,62 +9,83 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-navy border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-3 gap-10 mb-12">
+    <footer className="bg-charcoal text-cream">
+      {/* Main Footer */}
+      <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
+          {/* Logo & Description */}
           <div>
-            <p className="font-serif text-white text-lg tracking-widest mb-1">VICEROY RESIDENCES</p>
-            <p className="font-sans text-xs tracking-widest uppercase text-gold">Clearwater Beach, Florida</p>
-            <div className="gold-divider mt-4" />
-            <p className="font-sans text-white/40 text-xs leading-relaxed mt-4">
-              Two 9-story towers. 86 residences and 8 penthouses. 270 feet of Gulf beach frontage.
-              From $1,995,000.
-            </p>
-          </div>
-
-          <div>
-            <p className="font-sans text-[10px] tracking-widest uppercase text-gold mb-5">Navigation</p>
-            <div className="grid grid-cols-2 gap-2">
-              {footerLinks.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  className="font-sans text-xs text-white/50 hover:text-gold transition-colors"
-                >
-                  {l.label}
-                </a>
-              ))}
+            <div className="mb-6">
+              <p className="text-gold font-serif text-xl font-light tracking-wide">VICEROY RESIDENCES</p>
+              <p className="text-cream/60 font-sans text-xs tracking-luxury uppercase mt-1">Clearwater Beach</p>
             </div>
+            <div className="w-8 h-px bg-gold mb-4" />
+            <p className="text-cream/50 font-sans text-xs leading-relaxed">
+              An extraordinary collection of gulf-front residences designed for those who demand
+              the finest in coastal luxury living.
+            </p>
           </div>
 
+          {/* Nav Links */}
           <div>
-            <p className="font-sans text-[10px] tracking-widest uppercase text-gold mb-5">Exclusive Sales</p>
-            <p className="font-sans text-white/80 text-sm mb-1">Claudia Hall</p>
-            <p className="font-sans text-white/40 text-xs mb-4">HomeScene Property Partners International LLC</p>
-            <a href="tel:8134970060" className="block font-sans text-white/60 text-xs hover:text-gold transition-colors mb-1">
-              (813) 497-0060
-            </a>
-            <a href="mailto:claudia@luxuryfloridaresidence.com" className="block font-sans text-white/60 text-xs hover:text-gold transition-colors mb-1">
-              claudia@luxuryfloridaresidence.com
-            </a>
-            <p className="font-sans text-white/40 text-xs">
-              600 Cleveland St, Suite 312<br />Clearwater, FL 33755
-            </p>
+            <h4 className="text-gold text-xs tracking-luxury uppercase font-sans mb-6">Explore</h4>
+            <ul className="space-y-3">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-cream/60 text-xs uppercase tracking-wide font-sans hover:text-gold transition-colors duration-300"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-gold text-xs tracking-luxury uppercase font-sans mb-6">Sales Gallery</h4>
+            <div className="space-y-3">
+              <p className="text-cream/80 font-sans text-sm">Claudia Hall</p>
+              <p className="text-cream/50 font-sans text-xs">HomeScene Property Partners International LLC</p>
+              <div className="w-8 h-px bg-gold/50 my-4" />
+              <a href="tel:8134970060" className="block text-cream/60 text-xs font-sans hover:text-gold transition-colors duration-300">
+                (813) 497-0060
+              </a>
+              <a href="mailto:claudia@luxuryfloridaresidence.com" className="block text-cream/60 text-xs font-sans hover:text-gold transition-colors duration-300">
+                claudia@luxuryfloridaresidence.com
+              </a>
+              <p className="text-cream/50 text-xs font-sans">
+                600 Cleveland St Suite 312<br />Clearwater FL 33755
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8">
-          <p className="font-sans text-[10px] text-white/30 leading-relaxed">
-            © {new Date().getFullYear()} Viceroy Residences Clearwater Beach. All rights reserved.
-            Marketed exclusively by HomeScene Property Partners International LLC. Florida Real Estate
-            License CQ1060555. Claudia Hall, Licensed Real Estate Broker. The information contained
-            herein is deemed reliable but is subject to change without notice. All renderings are
-            artist's concepts. Dimensions, specifications, prices, and availability are subject to
-            change without notice. Oral representations cannot be relied upon. This is not an offer
-            to sell, or solicitation of offers to buy, the condominium units in states where such
-            offer or solicitation cannot be made. Viceroy Hotels &amp; Resorts is a registered trademark.
-            Equal Housing Opportunity.
+        {/* Divider */}
+        <div className="h-px bg-white/10 mb-8" />
+
+        {/* Disclaimer */}
+        <div className="mb-8">
+          <p className="text-cream/30 font-sans text-xs leading-relaxed">
+            <strong className="text-cream/50">Broker Disclaimer:</strong> This is not an offer to sell, or solicitation of an offer to buy, condominium units in states where such offer or solicitation cannot be made. Prices, plans, and specifications are subject to change without notice. All renderings, images, and descriptions are for illustrative purposes only and should not be relied upon as representations of actual conditions. The complete offering terms are in an Offering Plan available from the Sponsor. Oral representations cannot be relied upon as correctly stating the representations of the developer. For correct representations, make reference to the documents required by the applicable state agency to be made available to you in connection with the sale.
           </p>
+          <p className="text-cream/30 font-sans text-xs leading-relaxed mt-3">
+            Real estate licensee: Claudia Hall, License No. CQ1060555. HomeScene Property Partners International LLC. 600 Cleveland St Suite 312, Clearwater FL 33755.
+          </p>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-cream/30 text-xs font-sans">
+            © {new Date().getFullYear()} Viceroy Residences Clearwater Beach. All Rights Reserved.
+          </p>
+          <div className="flex gap-6">
+            <a href="#" className="text-cream/30 text-xs font-sans hover:text-gold transition-colors duration-300">Privacy Policy</a>
+            <a href="#" className="text-cream/30 text-xs font-sans hover:text-gold transition-colors duration-300">Terms of Use</a>
+            <a href="#" className="text-cream/30 text-xs font-sans hover:text-gold transition-colors duration-300">Fair Housing</a>
+          </div>
         </div>
       </div>
     </footer>
