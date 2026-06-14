@@ -7,7 +7,6 @@ const residenceTypes = [
     beds: 2,
     baths: 2.5,
     sqft: '1,850 – 2,200',
-    price: 'From $1.995M',
     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
     features: ['Gulf Views', 'Private Terrace', 'Open Kitchen', 'Floor-to-Ceiling Glass'],
   },
@@ -17,7 +16,6 @@ const residenceTypes = [
     beds: 3,
     baths: 3.5,
     sqft: '2,400 – 3,100',
-    price: 'From $2.995M',
     image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80',
     features: ['Panoramic Gulf Views', "Chef's Kitchen", 'Master Suite', 'Wraparound Terrace'],
   },
@@ -27,7 +25,6 @@ const residenceTypes = [
     beds: 4,
     baths: 4.5,
     sqft: '3,200 – 4,000',
-    price: 'From $4.5M',
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
     features: ['Corner Gulf Views', 'Private Foyer', 'Media Room', 'Dual Terraces'],
   },
@@ -37,7 +34,6 @@ const residenceTypes = [
     beds: 5,
     baths: 5.5,
     sqft: '4,200 – 5,500',
-    price: 'From $7.5M',
     image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
     features: ['360° Views', 'Private Elevator', 'Staff Quarters', 'Multiple Terraces'],
   },
@@ -47,7 +43,6 @@ const residenceTypes = [
     beds: 4,
     baths: 5,
     sqft: '5,500 – 8,000+',
-    price: 'From $12M',
     image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
     features: ['Full Floor Living', 'Private Rooftop', 'Plunge Pool', 'Bespoke Finishes'],
   },
@@ -104,7 +99,7 @@ export default function Residences() {
                   {residence.label}
                 </p>
                 <h3 className="font-serif text-2xl md:text-3xl text-navy font-light mb-4">
-                  {residence.price}
+                  {residence.type}
                 </h3>
 
                 {/* Specs */}

@@ -168,11 +168,11 @@ export default function Contact() {
                     className="w-full border border-gold/30 bg-white px-4 py-3 text-charcoal font-sans text-sm focus:outline-none focus:border-gold transition-colors"
                   >
                     <option value="">Select a Residence Type</option>
-                    <option value="2br">2 Bedroom – From $1.995M</option>
-                    <option value="3br">3 Bedroom – From $2.995M</option>
-                    <option value="4br">4 Bedroom – From $4.5M</option>
-                    <option value="5br">5 Bedroom – From $7.5M</option>
-                    <option value="penthouse">Penthouse – From $12M</option>
+                    <option value="2br">2 Bedroom</option>
+                    <option value="3br">3 Bedroom</option>
+                    <option value="4br">4 Bedroom</option>
+                    <option value="5br">5 Bedroom</option>
+                    <option value="penthouse">Penthouse</option>
                   </select>
                 </div>
 
@@ -212,7 +212,7 @@ export default function Contact() {
 
                 <p className="text-charcoal/40 text-xs font-sans text-center leading-relaxed">
                   By submitting, you agree to receive communications from our sales team.
-                  This does not constitute an offer to sell. Prices subject to change.
+                  This does not constitute an offer to sell.
                 </p>
               </form>
             )}

@@ -5,8 +5,7 @@ export default function Overview() {
     { value: '86', label: 'Private Residences' },
     { value: '8', label: 'Exclusive Penthouses' },
     { value: '2–5', label: 'Bedrooms' },
-    { value: '$1.995M', label: 'Starting Price' },
-    { value: '270\'', label: 'Gulf Frontage' },
+    { value: "270'", label: 'Gulf Frontage' },
     { value: '25,000', label: 'Sq Ft Amenities' },
   ]
 

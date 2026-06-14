@@ -39,10 +39,6 @@ export default function Hero() {
         <p className="text-cream/90 font-sans text-sm md:text-base tracking-wide uppercase mb-2 text-shadow">
           270 Feet of Gulf Beach Frontage
         </p>
-        <p className="text-gold font-serif text-2xl md:text-3xl font-light mb-10 text-shadow">
-          From $1.995M
-        </p>
-
         {/* Stats Row */}
         <div className="flex flex-wrap justify-center gap-8 mb-12">
           {[
