@@ -65,6 +65,9 @@ export default function Residences() {
             Each residence is a masterwork of interior design by Steven G., featuring premium finishes,
             expansive terraces, and floor-to-ceiling glass framing the endless Gulf horizon.
           </p>
+          <p className="font-serif italic text-gold text-lg mt-4">
+            Floor plans and pricing available upon request — contact Claudia Hall for exclusive access.
+          </p>
         </div>
 
         {/* Residence Cards */}
@@ -137,7 +140,7 @@ export default function Residences() {
                   href="#contact"
                   className="block text-center text-navy border border-navy text-xs tracking-luxury uppercase font-sans font-medium py-3 hover:bg-navy hover:text-cream transition-all duration-300"
                 >
-                  Inquire Now
+                  Request Floor Plans & Pricing
                 </a>
               </div>
             </div>
