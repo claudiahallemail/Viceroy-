@@ -1,5 +1,6 @@
 import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
+import Video from '@/components/Video'
 import Overview from '@/components/Overview'
 import Residences from '@/components/Residences'
 import Amenities from '@/components/Amenities'
@@ -13,6 +14,7 @@ export default function Home() {
     <main>
       <Navigation />
       <Hero />
+      <Video />
       <Overview />
       <Residences />
       <Amenities />
