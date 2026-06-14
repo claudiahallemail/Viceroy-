@@ -7,7 +7,7 @@ const residenceTypes = [
     beds: 2,
     baths: 2.5,
     sqft: '1,850 – 2,200',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1565183928294-7063f23ce0f8?w=800&q=80',
     features: ['Gulf Views', 'Private Terrace', 'Open Kitchen', 'Floor-to-Ceiling Glass'],
   },
   {
@@ -16,7 +16,7 @@ const residenceTypes = [
     beds: 3,
     baths: 3.5,
     sqft: '2,400 – 3,100',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&q=80',
     features: ['Panoramic Gulf Views', "Chef's Kitchen", 'Master Suite', 'Wraparound Terrace'],
   },
   {
@@ -25,7 +25,7 @@ const residenceTypes = [
     beds: 4,
     baths: 4.5,
     sqft: '3,200 – 4,000',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80',
     features: ['Corner Gulf Views', 'Private Foyer', 'Media Room', 'Dual Terraces'],
   },
   {
@@ -34,7 +34,7 @@ const residenceTypes = [
     beds: 5,
     baths: 5.5,
     sqft: '4,200 – 5,500',
-    image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80',
     features: ['360° Views', 'Private Elevator', 'Staff Quarters', 'Multiple Terraces'],
   },
   {
@@ -43,7 +43,7 @@ const residenceTypes = [
     beds: 4,
     baths: 5,
     sqft: '5,500 – 8,000+',
-    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80',
     features: ['Full Floor Living', 'Private Rooftop', 'Plunge Pool', 'Bespoke Finishes'],
   },
 ]

@@ -8,8 +8,8 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80"
-          alt="Clearwater Beach Gulf Front"
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=85"
+          alt="Gulf of Mexico beachfront at Clearwater Beach Florida"
           fill
           priority
           className="object-cover object-center"

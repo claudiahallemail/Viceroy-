@@ -1,32 +1,30 @@
-import Image from 'next/image'
-
 const teamMembers = [
   {
     name: 'Randall Stofft',
     role: 'Architect',
     company: 'Stofft Cooney Architects',
+    initials: 'RS',
     description:
-      'Internationally acclaimed architect Randall Stofft is known for creating some of the most coveted luxury residences in the world. His signature style blends coastal sensibility with timeless architectural principles, creating structures that are as functional as they are beautiful.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
-    credentials: ['40+ Years of Excellence', 'Global Luxury Portfolio', 'Award-Winning Design'],
+      'Randall Stofft of Stofft Cooney Architects is internationally recognized for designing some of the most coveted luxury residences in the world. With a portfolio spanning ultra-high-end estates, resort communities, and branded residences across Florida, the Caribbean, and beyond, his signature style seamlessly blends coastal sensibility with timeless architectural elegance.',
+    credentials: ['Stofft Cooney Architects', 'International Luxury Portfolio', 'Award-Winning Coastal Design'],
   },
   {
     name: 'Steven G.',
     role: 'Interior Designer',
     company: 'Steven G. Interiors',
+    initials: 'SG',
     description:
-      "Steven G. is one of America's most celebrated interior designers, with a portfolio spanning premier residences, luxury hotels, and superyachts. His approach to Viceroy Residences brings a bespoke vision of coastal elegance, marrying the finest materials with effortless sophistication.",
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
-    credentials: ['Celebrity Interior Designer', 'Featured in Architectural Digest', 'Global Luxury Portfolio'],
+      "Steven G. is one of America's most celebrated interior designers, renowned for a portfolio spanning premier residences, luxury hotels, yachts, and private jets. His approach to Viceroy Residences Clearwater Beach brings a bespoke vision of coastal glamour — marrying the finest materials, custom furnishings, and effortless sophistication in every home.",
+    credentials: ['Steven G. Interiors', 'Featured in Architectural Digest', 'Celebrity & Luxury Portfolio'],
   },
   {
     name: 'Viceroy Hotels & Resorts',
     role: 'Brand Partner & Manager',
     company: 'Viceroy Hotels & Resorts',
+    initials: 'VH',
     description:
-      "With hotels in the world's most desirable destinations, Viceroy Hotels & Resorts brings unparalleled hospitality expertise to Clearwater Beach. As brand partner and manager, Viceroy will deliver five-star services and experiences to all residents.",
-    image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&q=80',
-    credentials: ['Global Luxury Brand', 'Award-Winning Hospitality', 'Five-Star Service Standard'],
+      "Viceroy Hotels & Resorts is one of the world's most celebrated luxury hospitality brands, with iconic properties in the most sought-after destinations globally. As brand partner and manager of Viceroy Residences Clearwater Beach, Viceroy brings its acclaimed five-star service culture, world-class amenity programming, and global prestige directly to residents.",
+    credentials: ['Global Luxury Hospitality Brand', 'Award-Winning Service', 'Five-Star Residential Management'],
   },
 ]
 
@@ -53,16 +51,14 @@ export default function Team() {
         <div className="grid lg:grid-cols-3 gap-8">
           {teamMembers.map((member) => (
             <div key={member.name} className="group border border-gold/20 hover:border-gold transition-colors duration-300">
-              {/* Image */}
-              <div className="relative h-64 overflow-hidden">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                  sizes="(max-width: 1024px) 100vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent" />
+              {/* Portrait — elegant monogram */}
+              <div className="relative h-64 bg-navy flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-light to-navy opacity-90" />
+                <div className="relative z-10 text-center">
+                  <div className="w-24 h-24 border border-gold/40 flex items-center justify-center mx-auto mb-4">
+                    <span className="font-serif text-4xl text-gold font-light">{member.initials}</span>
+                  </div>
+                </div>
                 <div className="absolute bottom-6 left-6">
                   <p className="text-gold text-xs tracking-luxury uppercase font-sans mb-1">{member.role}</p>
                   <h3 className="font-serif text-2xl text-cream font-light">{member.name}</h3>
@@ -89,6 +85,13 @@ export default function Team() {
             </div>
           ))}
         </div>
+
+        <p className="text-center font-sans text-xs text-charcoal/40 mt-10">
+          For full team biographies, visit the official developer site at{' '}
+          <a href="https://viceroycwb.com/team/" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">
+            viceroycwb.com/team
+          </a>
+        </p>
       </div>
     </section>
   )

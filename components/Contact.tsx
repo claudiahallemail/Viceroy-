@@ -77,7 +77,7 @@ export default function Contact() {
 
             {/* License */}
             <p className="text-cream/40 text-xs font-sans">
-              License: CQ1060555 | HomeScene Property Partners International LLC
+              Sales Associate License: SL3600500 &nbsp;|&nbsp; Brokerage: HomeScene Property Partners International LLC (CQ1060555)
             </p>
           </div>
 
